@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import PokemonList from './components/PokemonList.jsx';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Choose your starter pokemon.</h1>
+        <PokemonList />
       </div>
     );
   }
