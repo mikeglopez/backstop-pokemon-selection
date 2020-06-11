@@ -14,7 +14,8 @@
 
 ## Usage
 
-```Install dependencies by running 'npm install'
+```
+Install dependencies by running 'npm install'
 Run 'npm run build' to start webpack and create bundle.js
 Open 'dist/index.html' in your browser to open the app
 ```
