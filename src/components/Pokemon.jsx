@@ -5,14 +5,14 @@ const Pokemon = props => {
   const feet = Math.floor(inches / 12);
   inches %= 12;
   const pounds = (props.attributes.weight * 0.220462).toFixed(1);
+  const formattedName =
+    props.attributes.name.charAt(0).toUpperCase() +
+    props.attributes.name.slice(1);
 
   return (
     <div style={{ display: 'inline-block' }}>
-      <h3>
-        {props.attributes.name.charAt(0).toUpperCase() +
-          props.attributes.name.slice(1)}
-      </h3>
-      <img src={props.attributes.sprites.front_default} />
+      <h3>{formattedName}</h3>
+      <img src={props.attributes.sprites.front_default} alt={formattedName} />
       <p>
         <b>Height:</b> {feet}'{inches}"
       </p>

@@ -10,6 +10,7 @@
 ## Technologies
 
 - React 16.13.1
+- Redux 4.0.5
 - Webpack 4.43.0
 
 ## Usage
