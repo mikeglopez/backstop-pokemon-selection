@@ -12,12 +12,23 @@ const Pokemon = props => {
   return (
     <div className='col-sm text-center'>
       <h3>{formattedName}</h3>
-      <img
-        src={props.attributes.sprites.front_default}
-        alt={formattedName}
-        height='96'
-        width='96'
-      />
+      <div
+        className='mx-auto my-3 pt-3'
+        style={{
+          backgroundImage: 'url("../assets/images/pokeball.png")',
+          backgroundRepeat: 'no-repeat',
+          height: 107,
+          width: 89
+        }}
+      >
+        <img
+          src={props.attributes.sprites.back_default}
+          style={{ filter: 'brightness(30%)' }}
+          alt={formattedName}
+          height='96'
+          width='96'
+        />
+      </div>
       <div className='row'>
         <div className='col px-0'>
           <span>
