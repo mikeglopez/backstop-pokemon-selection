@@ -1,53 +1,23 @@
 import React from 'react';
 
+import Card from './Card.jsx';
+
 const Pokemon = props => {
-  let inches = (props.attributes.height * 3.93701).toFixed(0);
-  const feet = Math.floor(inches / 12);
-  inches %= 12;
-  const pounds = (props.attributes.weight * 0.220462).toFixed(1);
   const formattedName =
     props.attributes.name.charAt(0).toUpperCase() +
     props.attributes.name.slice(1);
 
   return (
     <div className='col-sm my-5 text-center'>
-      <h3>{formattedName}</h3>
       <button
-        className='mx-auto my-3 pt-3'
-        style={pokeballStyle}
+        style={buttonStyle}
         data-toggle='modal'
         data-target={`#selection-${props.attributes.name}`}
       >
-        <img
-          className='ml-n2'
-          src={props.attributes.sprites.back_default}
-          style={{ filter: 'brightness(30%)' }}
-          alt={formattedName}
-          height='96'
-          width='96'
-        />
+        <Card attributes={props.attributes} formattedName={formattedName} />
       </button>
-      <div className='row'>
-        <div className='col px-0'>
-          <span>
-            <b>Height:</b> {feet}'{inches}"
-          </span>
-        </div>
-        <div className='col px-1'>
-          <span>
-            <b>Weight:</b> {pounds} lbs
-          </span>
-        </div>
-      </div>
-      <div className='row'>
-        <div className='col'>
-          <span>
-            <b>Base Exp:</b> {props.attributes.base_experience}
-          </span>
-        </div>
-      </div>
       <div className='modal' id={`selection-${props.attributes.name}`}>
-        <div className='modal-dialog'>
+        <div className='modal-dialog modal-dialog-centered'>
           <div className='modal-content'>
             <div className='modal-header'>
               <h4 className='modal-title'>You received {formattedName}!</h4>
@@ -56,11 +26,10 @@ const Pokemon = props => {
               </button>
             </div>
             <div className='modal-body'>
-              <img
-                src={props.attributes.sprites.front_default}
-                alt={formattedName}
-                height='96'
-                width='96'
+              <Card
+                attributes={props.attributes}
+                formattedName={formattedName}
+                front
               />
             </div>
             <div className='modal-footer'>
@@ -79,11 +48,8 @@ const Pokemon = props => {
   );
 };
 
-const pokeballStyle = {
-  backgroundImage: 'url("../assets/images/pokeball.png")',
-  backgroundRepeat: 'no-repeat',
-  height: 107,
-  width: 89,
+const buttonStyle = {
+  width: '100%',
   border: 'none',
   backgroundColor: 'transparent',
   outline: 'none'

@@ -39,12 +39,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className='row sticky-top bg-dark text-white py-3'>
+        <div
+          className='row bg-dark text-white py-3 mx-0'
+          style={styles.stickyHeader}
+        >
           <div className='col'>
             <h2 className='text-center'>Choose a Pokémon</h2>
           </div>
         </div>
-        <div className='container'>
+        <div className='container' style={{ marginTop: 76 }}>
           <div className='row'>
             <div className='col'>
               <PokemonList list={this.props.list} random={this.props.random} />
@@ -66,6 +69,10 @@ class App extends React.Component {
     );
   }
 }
+
+const styles = {
+  stickyHeader: { position: 'fixed', top: 0, width: '100%', zIndex: 100 }
+};
 
 const mapStateToProps = state => ({
   list: state.pokemon.starters,
