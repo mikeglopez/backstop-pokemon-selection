@@ -41,16 +41,16 @@ class App extends React.Component {
       <div>
         <div className='row sticky-top bg-dark text-white py-3'>
           <div className='col'>
-            <h2 className='text-center'>Choose a Pokémon.</h2>
+            <h2 className='text-center'>Choose a Pokémon</h2>
           </div>
         </div>
         <div className='container'>
-          <div className='row my-5'>
+          <div className='row'>
             <div className='col'>
               <PokemonList list={this.props.list} random={this.props.random} />
             </div>
           </div>
-          <div className='row justify-content-center'>
+          <div className='row justify-content-center mb-5'>
             <div className='col-sm text-center'>
               <button
                 type='button'

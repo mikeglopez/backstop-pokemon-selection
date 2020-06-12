@@ -10,7 +10,7 @@ const Pokemon = props => {
     props.attributes.name.slice(1);
 
   return (
-    <div className='col-sm text-center'>
+    <div className='col-sm my-5 text-center'>
       <h3>{formattedName}</h3>
       <div
         className='mx-auto my-3 pt-3'
