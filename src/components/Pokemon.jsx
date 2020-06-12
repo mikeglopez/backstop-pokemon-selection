@@ -12,23 +12,21 @@ const Pokemon = props => {
   return (
     <div className='col-sm my-5 text-center'>
       <h3>{formattedName}</h3>
-      <div
+      <button
         className='mx-auto my-3 pt-3'
-        style={{
-          backgroundImage: 'url("../assets/images/pokeball.png")',
-          backgroundRepeat: 'no-repeat',
-          height: 107,
-          width: 89
-        }}
+        style={pokeballStyle}
+        data-toggle='modal'
+        data-target={`#selection-${props.attributes.name}`}
       >
         <img
+          className='ml-n2'
           src={props.attributes.sprites.back_default}
           style={{ filter: 'brightness(30%)' }}
           alt={formattedName}
           height='96'
           width='96'
         />
-      </div>
+      </button>
       <div className='row'>
         <div className='col px-0'>
           <span>
@@ -48,8 +46,47 @@ const Pokemon = props => {
           </span>
         </div>
       </div>
+      <div className='modal' id={`selection-${props.attributes.name}`}>
+        <div className='modal-dialog'>
+          <div className='modal-content'>
+            <div className='modal-header'>
+              <h4 className='modal-title'>You received {formattedName}!</h4>
+              <button type='button' className='close' data-dismiss='modal'>
+                &times;
+              </button>
+            </div>
+            <div className='modal-body'>
+              <img
+                src={props.attributes.sprites.front_default}
+                alt={formattedName}
+                height='96'
+                width='96'
+              />
+            </div>
+            <div className='modal-footer'>
+              <button
+                type='button'
+                className='btn btn-danger'
+                data-dismiss='modal'
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
+};
+
+const pokeballStyle = {
+  backgroundImage: 'url("../assets/images/pokeball.png")',
+  backgroundRepeat: 'no-repeat',
+  height: 107,
+  width: 89,
+  border: 'none',
+  backgroundColor: 'transparent',
+  outline: 'none'
 };
 
 export default Pokemon;
