@@ -10,18 +10,33 @@ const Pokemon = props => {
     props.attributes.name.slice(1);
 
   return (
-    <div style={{ display: 'inline-block' }}>
+    <div className='col-sm text-center'>
       <h3>{formattedName}</h3>
-      <img src={props.attributes.sprites.front_default} alt={formattedName} />
-      <p>
-        <b>Height:</b> {feet}'{inches}"
-      </p>
-      <p>
-        <b>Weight:</b> {pounds} lbs
-      </p>
-      <p>
-        <b>Base Exp:</b> {props.attributes.base_experience}
-      </p>
+      <img
+        src={props.attributes.sprites.front_default}
+        alt={formattedName}
+        height='96'
+        width='96'
+      />
+      <div className='row'>
+        <div className='col px-0'>
+          <span>
+            <b>Height:</b> {feet}'{inches}"
+          </span>
+        </div>
+        <div className='col px-1'>
+          <span>
+            <b>Weight:</b> {pounds} lbs
+          </span>
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col'>
+          <span>
+            <b>Base Exp:</b> {props.attributes.base_experience}
+          </span>
+        </div>
+      </div>
     </div>
   );
 };

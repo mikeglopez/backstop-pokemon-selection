@@ -24,7 +24,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
+        <div className='row sticky-top bg-white'>
+          <div className='col'>
+            <h2 className='text-center'>Choose a Pokémon.</h2>
+          </div>
+        </div>
         <PokemonList list={this.props.list} random={this.props.random} />
         <button onClick={this.getRandomPokemon}>Random Pokémon</button>
       </div>

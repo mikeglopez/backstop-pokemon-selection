@@ -12,12 +12,7 @@ const PokemonList = props => {
     pokemonItems.push(<Pokemon key={pokemon.name} attributes={pokemon} />);
   }
 
-  return (
-    <div>
-      <h2>Choose a Pokémon.</h2>
-      <ul>{pokemonItems}</ul>
-    </div>
-  );
+  return <ul className='row px-0'>{pokemonItems}</ul>;
 };
 
 export default PokemonList;
